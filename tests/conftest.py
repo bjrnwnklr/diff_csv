@@ -9,6 +9,6 @@ import pytest
 @pytest.fixture(scope="module")
 def csv_file():
     fname = "testdata/forest_1.csv"
-    csvfile = diff_csv.core.file_to_dict(fname)
+    row_dict = diff_csv.core.file_to_dict(fname)
 
-    return csvfile
+    return row_dict

@@ -8,18 +8,6 @@ A simple CSV file comparer.
 # Usage
 
 
-# Files to customize before using
-
-1. Change the package name and associated imports
-
--   Change imports:
-    -   `package_name` directory:
-        -   `core.py`
-        -   `utils.py`
-    -   `tests` directory:
-        -   `context.py`
-        -   `conftest.py`
-        -   `test_core.py`
     -   `cli_app.py`: (Template for a CLI app, using the functions from the `core` and `utils` modules.)
 
 1. Add required packages to the `req_initial.txt` file

@@ -1,4 +1,5 @@
 import diff_csv.utils
+import csv
 
 
 def file_to_dict(fname):
