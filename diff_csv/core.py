@@ -11,3 +11,8 @@ def file_to_dict(fname):
             rows.append(row)
 
     return rows
+
+
+def headers_match(h1, h2) -> bool:
+    """Return if headers match. Headers h1 and h2 are passed as a list of header names."""
+    pass
