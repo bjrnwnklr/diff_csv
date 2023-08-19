@@ -10,3 +10,11 @@ class TestCore:
         fname = "testdata/forest_1.csv"
         row_dict = diff_csv.core.read_file_raw(fname)
         assert len(row_dict) == 272
+
+    def test_changed_header_count(self, csv_file):
+        """Test that changed header counts are being recognized correctly."""
+        f1 = csv_file
+        # load changed file
+        fname = "testdata/forest_1_changed_headers_count.csv"
+        f2 = diff_csv.core.read_file_raw(fname)
+        assert diff_csv.core.headers_match(f1, f2) == False
