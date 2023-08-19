@@ -37,3 +37,12 @@ def headers_match(f1, f2) -> bool:
         logging.debug(f"Headers have matching fields.")
 
     return True
+
+
+def row_count_match(f1, f2) -> bool:
+    """Return if row count of both files match."""
+    if len(f1) != len(f2):
+        logging.error(f"Row count different between both files: {len(f1)} != {len(f2)}")
+        return False
+    else:
+        return True

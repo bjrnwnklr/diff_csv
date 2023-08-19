@@ -13,11 +13,11 @@ def the_main_function(fname1: str, fname2: str, id_col: str) -> None:
     # read in the first file
     # f1 = diff_csv.core.file_to_dict(fname1)
     f1 = diff_csv.core.read_file_raw(fname1)
-    logging.info(f"Read file {fname1} with {len(f1)} rows")
+    logging.debug(f"Read file {fname1} with {len(f1)} rows")
 
     # read second file
     f2 = diff_csv.core.read_file_raw(fname2)
-    logging.info(f"Read file {fname2} with {len(f2)} rows")
+    logging.debug(f"Read file {fname2} with {len(f2)} rows")
 
     # start comparing
     # 1) check headers are the same - same number, same order, same names
@@ -27,6 +27,9 @@ def the_main_function(fname1: str, fname2: str, id_col: str) -> None:
         sys.exit()
 
     # 2) check rows per file and report difference
+    if not diff_csv.core.row_count_match(f1, f2):
+        print("Row counts are different, see error messages for details")
+        # do not exit here, we still want to compare the lines since headers match.
 
     # 3) create hashes per row in two separate dictionaries and compare them
     #    Report on
