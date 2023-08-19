@@ -34,3 +34,12 @@ class TestCore:
         fname = "testdata/forest_1_changed_row_count.csv"
         f2 = diff_csv.core.read_file_raw(fname)
         assert diff_csv.core.row_count_match(f1, f2) == False
+
+    def test_rows_mismatch(self, csv_file):
+        """Test that row values match between files"""
+        f1 = csv_file
+        # load changed file
+        fname = "testdata/forest_1_changed_row.csv"
+        f2 = diff_csv.core.read_file_raw(fname)
+        id_col = "Country Code"
+        assert diff_csv.core.row_match(f1, f2, id_col) == False

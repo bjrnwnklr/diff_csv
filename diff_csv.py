@@ -35,6 +35,7 @@ def the_main_function(fname1: str, fname2: str, id_col: str) -> None:
     #    Report on
     #    - key from 2nd file not found in 1st file
     #    - mismatch of hash between two keys
+    mismatches = diff_csv.core.row_match(f1, f2, id_col)
 
 
 def main():
