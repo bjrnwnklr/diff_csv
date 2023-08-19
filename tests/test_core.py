@@ -3,8 +3,10 @@ import diff_csv.core
 
 
 class TestCore:
-    def test_file_to_dict(self):
-        """Test the file_to_dict method"""
+    def test_read_file_raw(self):
+        """Test the read_file_raw method by reading in a sample file.
+        Expected length including one header row: 272.
+        """
         fname = "testdata/forest_1.csv"
-        row_dict = diff_csv.core.file_to_dict(fname)
-        assert len(row_dict) == 271
+        row_dict = diff_csv.core.read_file_raw(fname)
+        assert len(row_dict) == 272

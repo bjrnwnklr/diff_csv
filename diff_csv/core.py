@@ -2,15 +2,11 @@ import diff_csv.utils
 import csv
 
 
-def file_to_dict(fname):
-    """Read a csv file into a list of dictionaries, one dict per row."""
-    rows = []
+def read_file_raw(fname):
+    """Read a CSV file, just line by line. Headers will be in the first row."""
     with open(fname, "r") as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            rows.append(row)
-
-    return rows
+        reader = csv.reader(csvfile)
+        return [row for row in reader]
 
 
 def headers_match(h1, h2) -> bool:

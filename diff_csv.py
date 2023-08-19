@@ -1,3 +1,4 @@
+import sys
 import logging
 import argparse
 from pathlib import Path
@@ -10,16 +11,22 @@ def the_main_function(fname1: str, fname2: str, id_col: str) -> None:
     """Compare two CSV files with each other."""
 
     # read in the first file
-    f1 = diff_csv.core.file_to_dict(fname1)
+    # f1 = diff_csv.core.file_to_dict(fname1)
+    f1 = diff_csv.core.read_file_raw(fname1)
     logging.info(f"Read file {fname1} with {len(f1)} rows")
 
     # read second file
-    f2 = diff_csv.core.file_to_dict(fname2)
+    f2 = diff_csv.core.read_file_raw(fname2)
     logging.info(f"Read file {fname2} with {len(f2)} rows")
 
     # start comparing
     # 1) check headers are the same - same number, same order, same names
-    print(f2[0].keys())
+    # check number of columns is the same
+    h1 = f1[0]
+    h2 = f2[0]
+    if len(h1) != len(h2):
+        print(f"Headers have different number of fields: {len(h1)} != {len(h2)}")
+        sys.exit()
 
     # 2) check rows per file and report difference
 
