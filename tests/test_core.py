@@ -1,11 +1,7 @@
-from context import package_name
-import package_name.core
+from context import diff_csv
+import diff_csv.core
 
 
 class TestCore:
-    def test_dummy_func(self, setup_dummy):
-        """Test dummy function - replace with actual test.
-        Uses a fixture from `conftest.py`.
-        """
-        a, b = setup_dummy
-        assert package_name.core.dummy_func(a, b) == 2
+    def test_file_to_dict():
+        """Test the file_to_dict method"""

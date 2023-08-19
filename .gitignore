@@ -6,9 +6,6 @@ secrets.sh
 .idea/
 .vscode/
 
-# CSV files
-*.csv
-
 # SQLite databases
 *.db
 

@@ -1,7 +1,12 @@
-import package_name.utils
+import diff_csv.utils
 
 
-@package_name.utils.runtimer
-def dummy_func(a: int, b: int) -> int:
-    """Dummy function."""
-    return a + b
+def file_to_dict(fname):
+    """Read a csv file into a list of dictionaries, one dict per row."""
+    rows = []
+    with open(fname, "r") as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            rows.append(row)
+
+    return rows

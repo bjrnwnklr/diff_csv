@@ -1,43 +1,17 @@
-# Python Template
+# diff_csv
 
-Python template set-up, covering my main set-up and workflow.
+A simple CSV file comparer.
 
-# How to use
+- Compares headers of two CSV files - same columns, same column names, same order
+- Compares rows of both files against each other by using a designated column as key
 
--   Use as Template in GitHub when setting up a new repository
--   Customize the files to the new project
+# Usage
 
-# Structure
-
-```
-.
-├── .flake8
-├── .github
-│   └── workflows
-│       └── main.yml
-├── .gitignore
-├── .vscode
-│   └── settings.json
-├── cli_app.py
-├── README.md
-├── package_name
-│   ├── __init__.py
-│   ├── core.py
-│   └── utils.py
-├── req_initial.txt
-├── setup.py
-└── tests
-    ├── conftest.py
-    ├── context.py
-    └── test_core.py
-```
 
 # Files to customize before using
 
 1. Change the package name and associated imports
 
--   Change the folder `package_name` to the desired package name
--   `setup.py`: Replace `package_name` and fill in the description, add dependencies to `install_requires`.
 -   Change imports:
     -   `package_name` directory:
         -   `core.py`

@@ -5,27 +5,10 @@ import pytest
 # from context import package_name
 
 
+# create word list fixture
 @pytest.fixture(scope="module")
-def setup_dummy():
-    a = 1
-    b = 1
-    return (a, b)
+def csv_file():
+    fname = "testdata/forest_1.csv"
+    csvfile = diff_csv.core.file_to_dict(fname)
 
-
-# Example fixtures:
-# # create word list fixture
-# @pytest.fixture(scope="module")
-# def setup_words():
-#     fname = "testdata/english-answers-alphabetical.txt"
-#     words = wordle.utils.load_word_list(fname)
-
-#     return words
-
-
-# # create pattern_matrix
-# @pytest.fixture(scope="module")
-# def setup_pattern_matrix(setup_words):
-#     words = setup_words
-#     pm = wordle.core.generate_pattern_matrix(words)
-
-#     return pm
+    return csvfile
