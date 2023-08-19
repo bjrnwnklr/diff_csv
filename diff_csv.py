@@ -35,7 +35,13 @@ def the_main_function(fname1: str, fname2: str, id_col: str) -> None:
     #    Report on
     #    - key from 2nd file not found in 1st file
     #    - mismatch of hash between two keys
-    mismatches = diff_csv.core.row_match(f1, f2, id_col)
+    not_found_f1, not_found_f2, mismatches = diff_csv.core.row_match(f1, f2, id_col)
+    if not_found_f1:
+        print(f"File 2 has some rows that are not in file 1: {not_found_f1}")
+    if not_found_f2:
+        print(f"File 1 has some rows that are not in file 2: {not_found_f2}")
+    if mismatches:
+        print(f"Mismatching rows found in files: {mismatches}")
 
 
 def main():
