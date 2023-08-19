@@ -22,10 +22,8 @@ def the_main_function(fname1: str, fname2: str, id_col: str) -> None:
     # start comparing
     # 1) check headers are the same - same number, same order, same names
     # check number of columns is the same
-    h1 = f1[0]
-    h2 = f2[0]
-    if len(h1) != len(h2):
-        print(f"Headers have different number of fields: {len(h1)} != {len(h2)}")
+    if not diff_csv.core.headers_match(f1, f2):
+        print("Headers do not match, see error messages for details")
         sys.exit()
 
     # 2) check rows per file and report difference
